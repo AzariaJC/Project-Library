@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Library App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="container">
+        <div class="bookshelf">
+            <ul id="item-list"></ul>
+        </div>
+    </div>
+    <button id="new-book-button" command="show-modal" commandfor="my-dialog">Add Book</button>
+
+    <dialog id="my-dialog">
+        <form id="book-form" method="dialog">
+            <label for="firstname">Title of Book</label>
+            <input type="text" id="title" name="title">
+            <label for="firstname">Author of Book</label>
+            <input type="text" id="author" name="author">
+            <button type="submit">Submit</button>
+            <button id="close-btn" type="button">Cancel</button>
+        </form>
+    </dialog>
     <script src="script.js"></script>
 </body>
+
 </html>

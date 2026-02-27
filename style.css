@@ -1,0 +1,17 @@
+#item-list li {
+    list-style-type: none;
+    background-color: green;
+    color: white;
+    border: 5px solid black;
+}
+
+.bookshelf {
+    display: grid;
+    background-color: #806517;
+}
+
+#item-list {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
