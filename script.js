@@ -60,6 +60,3 @@ closeBtn.addEventListener("click", (e) => {
     myDialog.close();
 });
 
-deleteButton.addEventListener("click", (e) => {
-    myLibrary[i]
-})
