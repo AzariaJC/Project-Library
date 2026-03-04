@@ -4,18 +4,20 @@ const bookForm = document.querySelector("#book-form");
 const myDialog = document.querySelector("#my-dialog");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
+const readInput = document.querySelector("#read");
 const closeBtn = document.querySelector("#close-btn");
 
 
 
-function Book(title, author) {
+function Book(title, author, read) {
     this.title = title;
     this.author = author;
+    this.read = read;
     this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(title, author) {
-    let myBook = new Book(title, author);
+function addBookToLibrary(title, author, read) {
+    let myBook = new Book(title, author, read);
     myLibrary.push(myBook);
 }
 
@@ -26,7 +28,7 @@ function loopThroughLibrary() {
             const listItem = document.createElement('li');
             const deleteButton = document.createElement("button");
             listItem.setAttribute('id', book.id);
-            listItem.textContent = `${book.title} by ${book.author}`;
+            listItem.textContent = `${book.title} by ${book.author}. Read? ${book.read}`;
             deleteButton.textContent = "Delete";
             deleteButton.addEventListener("click", () => {
                 myLibrary.splice(i, 1);
@@ -44,7 +46,7 @@ bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     // 2. Create the new book object (assuming you have a Book constructor)
-    const newBook = new Book(titleInput.value, authorInput.value);
+    const newBook = new Book(titleInput.value, authorInput.value, readInput.value);
 
     // 3. Add it to your array and update the UI
     myLibrary.push(newBook);

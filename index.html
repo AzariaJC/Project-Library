@@ -18,10 +18,15 @@
 
     <dialog id="my-dialog">
         <form id="book-form" method="dialog">
-            <label for="firstname">Title of Book</label>
+            <label for="title">Title of Book</label>
             <input type="text" id="title" name="title">
-            <label for="firstname">Author of Book</label>
+            <label for="author">Author of Book</label>
             <input type="text" id="author" name="author">
+            <label for="read">Have you read it?</label>
+            <select id="read" name="read">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
             <button type="submit">Submit</button>
             <button id="close-btn" type="button">Cancel</button>
         </form>
