@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 const listContainer = document.getElementById('item-list');
 const bookForm = document.querySelector("#book-form");
 const myDialog = document.querySelector("#my-dialog");
@@ -31,8 +31,8 @@ function loopThroughLibrary() {
             listItem.textContent = `${book.title} by ${book.author}. Read? ${book.read}`;
             deleteButton.textContent = "Delete";
             deleteButton.addEventListener("click", () => {
-                myLibrary.splice(i, 1);
-                listItem.remove();
+              myLibrary = myLibrary.filter((id) => id !== book.id)
+                
             })
             listContainer.appendChild(listItem);
             listItem.appendChild(deleteButton);
